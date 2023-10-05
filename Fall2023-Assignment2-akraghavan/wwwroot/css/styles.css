@@ -1,0 +1,131 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: crimson;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+#searchResults, #time {
+    display: none;
+}
+
+body header {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: crimson;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#query {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 300px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* This creates a gap between each flex item */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+    button:hover {
+        background-color: #a10d1e; /* Darkened crimson */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+#lucky {
+    margin-top: 10px;
+}
+
+/* Dialog Box */
+.ui-dialog {
+    border: 2px solid crimson;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+    /* Title Bar */
+    .ui-dialog .ui-dialog-titlebar {
+        background-color: crimson;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+    }
+
+    /* Close Button */
+    .ui-dialog .ui-dialog-titlebar-close {
+        background-color: white;
+        border: 1px solid crimson;
+        color: crimson;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+        .ui-dialog .ui-dialog-titlebar-close:hover {
+            background-color: crimson;
+            color: white;
+        }
+
+/* Dialog Content */
+.ui-dialog-content {
+    padding: 15px;
+}
+
+/* Dialog Buttons (if any) */
+.ui-dialog .ui-dialog-buttonpane {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+    .ui-dialog .ui-dialog-buttonpane .ui-button {
+        background-color: crimson;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+    }
+
+        .ui-dialog .ui-dialog-buttonpane .ui-button:hover {
+            background-color: #a10d1e; /* Darkened crimson */
+        }
