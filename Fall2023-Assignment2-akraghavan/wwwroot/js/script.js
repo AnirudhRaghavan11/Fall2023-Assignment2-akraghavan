@@ -1,21 +1,32 @@
 ﻿$(document).ready(function () {
-    var bgImages = ['background1.jpg', 'background2.jpg']; // assuming you have a second image named background2.jpg
+    var bgImages = ['background.jpg', 'background2.jpg'];
     var currentImageIndex = 0;
 
     $('#search').on('click', function () {
         apiSearch();
     });
 
+    //to cycle b/w the two images
     $('#header').on('click', function () {
-        currentImageIndex = (currentImageIndex + 1) % bgImages.length; // cycles between the two images
-        $('body').css('background-image', `url('${bgImages[currentImageIndex]}')`);
+        if ($('body').hasClass('background1')) {
+            $('body').removeClass('background1').addClass('background2');
+        } else {
+            $('body').removeClass('background2').addClass('background1');
+        }
     });
 
     $('#showTime').on('click', function () {
         var now = new Date();
         var timeString = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
         $('#time').html(timeString);
-        $('#time').dialog();
+        $('#time').dialog({
+            open: function () {
+                $('body').addClass('no-scroll');
+            },
+            close: function () {
+                $('body').removeClass('no-scroll');
+            }
+        });
     });
 
     $('#lucky').on('click', function () {
@@ -56,11 +67,17 @@ function apiSearch(callback) {
                 }
 
                 $('#searchResults').html(results);
-                $('#searchResults').dialog();
+                $('#searchResults').dialog({
+                    open: function () {
+                        $('body').addClass('no-scroll');
+                    },
+                    close: function () {
+                        $('body').removeClass('no-scroll');
+                    }
+                });
             }
         })
         .fail(function () {
             alert('error');
         });
 }
-

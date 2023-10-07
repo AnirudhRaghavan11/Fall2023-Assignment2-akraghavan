@@ -1,5 +1,5 @@
 body {
-    background-image: url('background.jpg');
+    /*background-image: url('background.jpg');*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -11,6 +11,21 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.background1 {
+    background-image: url('background.jpg');
+}
+
+.background2 {
+    background-image: url('background2.jpg');
+}
+
 
 header {
     font-size: 2em;
@@ -69,7 +84,7 @@ button {
 
 
 #lucky {
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 /* Dialog Box */
@@ -95,9 +110,10 @@ button {
         border-radius: 50%;
         width: 25px;
         height: 25px;
-        top: 50%;
+        top: 7px; /* Adjust this value */
         right: 10px;
-        transform: translateY(-50%);
+        margin: 0;
+        position: absolute;
     }
 
         .ui-dialog .ui-dialog-titlebar-close:hover {
